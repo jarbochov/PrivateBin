@@ -64,6 +64,24 @@
 	word-wrap: break-word;
 }
 
+#plaintext {
+	border: 1px solid gray;
+	padding: 20px;
+	margin-top: 20px;
+}
+
+#aboutbox {
+	font-size: 8px;
+}
+
+footer h5{
+	display:none;
+}
+
+.col-md-1{
+	display:none;
+}
+
 #message {
 	height: 70dvh;
 }
