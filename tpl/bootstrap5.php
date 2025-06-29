@@ -38,7 +38,7 @@ if ($ZEROBINCOMPATIBILITY) :
 <?php
 endif;
 ?>
-		<?php $this->_scriptTag('js/zlib-1.3.1.js', 'defer'); ?>
+		<?php $this->_scriptTag('js/zlib-1.3.1-1.js', 'defer'); ?>
 		<?php $this->_scriptTag('js/base-x-4.0.0.js', 'defer'); ?>
 		<?php $this->_scriptTag('js/rawinflate-0.3.js', 'defer'); ?>
 		<?php $this->_scriptTag('js/bootstrap-5.3.3.js', 'async'); ?>
@@ -55,7 +55,7 @@ if ($MARKDOWN) :
 <?php
 endif;
 ?>
-		<?php $this->_scriptTag('js/purify-3.2.5.js', 'defer'); ?>
+		<?php $this->_scriptTag('js/purify-3.2.6.js', 'defer'); ?>
 		<?php $this->_scriptTag('js/legacy.js', 'async'); ?>
 		<?php $this->_scriptTag('js/privatebin.js', 'defer'); ?>
 		<!-- icon -->
@@ -261,11 +261,11 @@ if ($FILEUPLOAD) :
 							<ul class="dropdown-menu px-2">
 								<li id="filewrap">
 									<div>
-										<input type="file" id="file" name="file" class="form-control" />
+										<input type="file" id="file" name="file" class="form-control" multiple />
 									</div>
 									<div id="dragAndDropFileName" class="dragAndDropFile"><?php echo I18n::_('alternatively drag & drop a file or paste an image from the clipboard'); ?></div>
 								</li>
-								<li id="customattachment" class="hidden"></li>
+								<li id="customattachment" class="hidden d-flex flex-column px-3"></li>
 								<li>
 									<a id="fileremovebutton" href="#" class="dropdown-item">
 										<?php echo I18n::_('Remove attachment'), PHP_EOL; ?>
@@ -370,10 +370,7 @@ endif;
 <?php
 if ($FILEUPLOAD) :
 ?>
-				<div id="attachment" role="alert" class="hidden alert alert-info">
-					<svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="img/bootstrap-icons.svg#download" /></svg>
-					<a class="alert-link"><?php echo I18n::_('Download attachment'); ?></a>
-				</div>
+				<div id="attachment" class="hidden"></div>
 <?php
 endif;
 ?>
@@ -514,9 +511,6 @@ endif;
 				</p>
 			</div>
 		</footer>
-<?php
-if ($DISCUSSION) :
-?>
 		<div id="serverdata" class="hidden" aria-hidden="true">
 			<div id="templates">
 				<article id="commenttemplate" class="comment px-2 pb-3">
@@ -538,11 +532,12 @@ if ($DISCUSSION) :
 					</div>
 					<button id="replybutton" class="btn btn-secondary btn-sm"><?php echo I18n::_('Post comment'); ?></button>
 				</div>
+				<div id="attachmenttemplate" role="alert" class="hidden alert alert-info">
+					<svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="img/bootstrap-icons.svg#download" /></svg>
+					<a class="alert-link"><?php echo I18n::_('Download attachment'); ?></a>
+				</div>
 			</div>
 		</div>
-<?php
-endif;
-?>
 <?php
 if ($FILEUPLOAD) :
 ?>

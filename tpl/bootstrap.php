@@ -55,7 +55,7 @@ if ($ZEROBINCOMPATIBILITY) :
 <?php
 endif;
 ?>
-		<?php $this->_scriptTag('js/zlib-1.3.1.js', 'async'); ?>
+		<?php $this->_scriptTag('js/zlib-1.3.1-1.js', 'async'); ?>
 		<?php $this->_scriptTag('js/base-x-4.0.0.js', 'defer'); ?>
 		<?php $this->_scriptTag('js/rawinflate-0.3.js', 'defer'); ?>
 		<?php $this->_scriptTag('js/bootstrap-3.4.1.js', 'defer'); ?>
@@ -71,7 +71,7 @@ if ($MARKDOWN) :
 <?php
 endif;
 ?>
-		<?php $this->_scriptTag('js/purify-3.2.5.js', 'async'); ?>
+		<?php $this->_scriptTag('js/purify-3.2.6.js', 'async'); ?>
 		<?php $this->_scriptTag('js/legacy.js', 'async'); ?>
 		<?php $this->_scriptTag('js/privatebin.js', 'defer'); ?>
 		<!-- icon -->
@@ -386,7 +386,7 @@ if ($FILEUPLOAD) :
 						<ul class="dropdown-menu">
 							<li id="filewrap">
 								<div>
-									<input type="file" id="file" name="file" />
+									<input type="file" id="file" name="file" multiple />
 								</div>
 								<div id="dragAndDropFileName" class="dragAndDropFile"><?php echo I18n::_('alternatively drag & drop a file or paste an image from the clipboard'); ?></div>
 							</li>
@@ -505,10 +505,7 @@ endif;
 <?php
 if ($FILEUPLOAD) :
 ?>
-				<div id="attachment" role="alert" class="hidden alert alert-info">
-					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
-					<a class="alert-link"><?php echo I18n::_('Download attachment'); ?></a>
-				</div>
+				<div id="attachment" class="hidden"></div>
 <?php
 endif;
 ?>
@@ -656,9 +653,6 @@ endif;
 				</div>
 			</footer>
 		</main>
-<?php
-if ($DISCUSSION) :
-?>
 		<div id="serverdata" class="hidden" aria-hidden="true">
 			<div id="templates">
 				<article id="commenttemplate" class="comment">
@@ -680,11 +674,12 @@ if ($DISCUSSION) :
 					</div>
 					<button id="replybutton" class="btn btn-default btn-sm"><?php echo I18n::_('Post comment'); ?></button>
 				</div>
+				<div id="attachmenttemplate" role="alert" class="attachment hidden alert alert-info">
+					<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+					<a class="alert-link"><?php echo I18n::_('Download attachment'); ?></a>
+				</div>
 			</div>
 		</div>
-<?php
-endif;
-?>
 <?php
 if ($FILEUPLOAD) :
 ?>
